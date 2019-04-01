@@ -1,0 +1,32 @@
+{
+  "name": "satisfy-dep",
+  "version": "0.1.0",
+  "description": "Verify your dependencies' tests status",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikach/satisfy-dep.git"
+  },
+  "author": {
+    "name": "Mykhailo Kachanovskyi",
+    "email": "mikach27@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikach/satisfy-dep/issues"
+  },
+  "homepage": "https://github.com/mikach/satisfy-dep#readme",
+  "dependencies": {
+    "args": "^5.0.1",
+    "import-jsx": "^2.0.0",
+    "ink": "^2.1.0",
+    "ink-spinner": "^3.0.0",
+    "minimatch": "^3.0.4",
+    "promise-queue": "^2.2.5",
+    "react": "^16.8.6"
+  }
+}
