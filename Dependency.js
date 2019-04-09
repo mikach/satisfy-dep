@@ -17,7 +17,7 @@ function installDeps(packageName, setStatus) {
     return execPromise(
         'npm install',
         {
-            cwd: path.join(__dirname, 'node_modules', packageName)
+            cwd: path.join(process.cwd(), 'node_modules', packageName)
         }
     ).then(
         function() {
@@ -33,7 +33,7 @@ function runTests(packageName, setStatus) {
     setStatus('Running tests');
 
     return execPromise('npm test', {
-        cwd: path.join(__dirname, 'node_modules', packageName)
+        cwd: path.join(process.cwd(), 'node_modules', packageName)
     }).then(
         function() {
             setStatus('OK');
@@ -62,7 +62,9 @@ const Dependency = function({ name }) {
             </Box>
             <Box>
                 {status === 'Pending' && <Spinner type="dots" />}
-                {status === 'Installing dependencies' && <Spinner type="monkey" />}
+                {status === 'Installing dependencies' && (
+                    <Spinner type="monkey" />
+                )}
                 {status === 'Running tests' && <Spinner type="runner" />}
                 <Text>{status}</Text>
             </Box>

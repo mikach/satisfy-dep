@@ -10,9 +10,11 @@ const App = function({ match }) {
     const [dirs, setDirs] = useState([]);
 
     useEffect(function() {
-        const dirs = fs.readdirSync(path.join(__dirname, 'node_modules')).filter(function(dirName) {
-            return minimatch(dirName, match);
-        });
+        const dirs = fs
+            .readdirSync(path.join(process.cwd(), 'node_modules'))
+            .filter(function(dirName) {
+                return minimatch(dirName, match);
+            });
 
         setDirs(dirs);
     }, []);
